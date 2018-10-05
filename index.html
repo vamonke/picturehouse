@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Poppins:400,700" rel="stylesheet">
+    <title>PICTURE HOUSE</title>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div id="banner">
+        <!-- <div class="gradient"></div> -->
+        <div class="overlay"></div>
+        <div class="width-wrap">
+            <h2>WELCOME TO</h2>
+            <h1>PICTURE HOUSE</h1>
+            <div id="dropdowns">
+                <select id="movie-select">
+                    <option value="">Movie</option>
+                    <option value="audi">Audi</option>
+                </select>
+                <select id="cinema-select">
+                    <option value="">Cinema</option>
+                    <option value="audi">Audi</option>
+                </select>
+                <select id="date-select" disabled>
+                    <option value="">Date</option>
+                    <option value="audi">Audi</option>
+                </select>
+                <select id="showtime-select" disabled>
+                    <option value="">Showtime</option>
+                    <option value="audi">Audi</option>
+                </select>
+                <button>BOOK NOW</button>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+
+    <script>
+        $(function () {
+            $('#navbar').load('nav.html');
+            $('#footer').load('footer.html');
+        });
+    </script>
+</body>
+
+</html>
