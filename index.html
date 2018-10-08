@@ -3,6 +3,8 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="common.css">
     <link rel="stylesheet" type="text/css" href="home.css">
@@ -13,6 +15,11 @@
 <body>
     <div id="navbar"></div>
     <div id="banner">
+        <div class="slideshow">
+            <div style="background-image: url(people.jpg)"></div>
+            <div style="background-image: url(banner1.jpg)"></div>
+            <div style="background-image: url(banner2.png)"></div>
+        </div>
         <!-- <div class="gradient"></div> -->
         <div class="overlay"></div>
         <div class="width-wrap">
@@ -45,6 +52,16 @@
         $(function () {
             $('#navbar').load('nav.html');
             $('#footer').load('footer.html');
+        });
+        $(document).ready(function () {
+            $('.slideshow').slick({
+                arrows: false,
+                autoplay: true,
+                fade: true,
+                cssEase: 'ease-in-out',
+                speed: 2000,
+                autoplaySpeed: 4000,
+            });
         });
     </script>
 </body>
