@@ -10,20 +10,30 @@ a {
 }
 
 .center {
-    text-emphasis: center;
+    text-align: center;
 }
 
 h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 30pt;
-    line-height: 0.7em;
+    line-height: 0.8em;
+    margin-bottom: 10px;
 }
 
 h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: normal;
-    font-size: 18pt;
+    font-size: 21pt;
+    margin-bottom: 10px;
+}
+
+
+h3 {
+    font-weight: 500;
+    font-size: 14pt;
+    margin-bottom: 10px;
+
 }
 
 .width-wrap {
@@ -100,6 +110,7 @@ footer {
     font-weight: 600;
     font-size: 10pt;
     letter-spacing: 0.2em;
+    clear: both;
 }
 
 footer h1 {

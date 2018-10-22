@@ -1,0 +1,77 @@
+.movie-section {
+    padding: 150px 20px 100px;
+    overflow: auto;
+    background-color: #333;
+}
+
+.poster {
+    width: 30%;
+    float: left;
+}
+
+.details {
+    width: 70%;
+    float: right;
+    /* display: inline-block; */
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.order-section {
+    padding: 100px 20px 100px;
+    clear: both;
+}
+
+h3 {
+    border-top: 1px solid #222;
+    margin: 20px 0 0;
+    padding: 15px 0 10px;
+}
+
+h3:first-of-type {
+    border-top: none;
+    margin-top: 0;
+}
+
+.showtimes {
+    margin-top: 80px;
+    overflow: auto;
+    outline: 1px solid #333;
+}
+
+.border-left {
+    border-left: 1px solid #333;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.timeslot {
+    display: inline-block;
+    background-color: #333;
+    margin: 5px 10px 0 0;
+    padding: 7px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-transition: background-color 200ms ease;
+    -ms-transition: background-color 200ms ease;
+    transition: background-color 200ms ease;
+}
+
+.timeslot:hover {
+    background-color: #555;
+    -webkit-transition: background-color 200ms ease;
+    -ms-transition: background-color 200ms ease;
+    transition: background-color 200ms ease;
+}
+
+.header {
+    background-color: #222;
+    border-bottom: 1px solid #333;
+    padding: 25px;
+}
+
+.padding {
+    padding: 25px;
+}
