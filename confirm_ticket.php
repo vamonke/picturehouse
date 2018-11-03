@@ -56,29 +56,37 @@
 			JOIN cinemas ON showtimes.cinema_id = cinemas.id
 		WHERE showtimes.id =".$showtime_id;
 	$result = mysqli_query($conn, $sql);
-	$showtime = mysqli_fetch_assoc($result);
-
+	$row = mysqli_fetch_assoc($result);
+	
 	if ($success) {
+		$title = $row['title'];
+		$showdate = $row['showdate'];
+		$showtime = $row['showtime'];
+		$cinema_name = $row['name'];
+		$seats = implode(", ", $_POST['seats']);
+
 		echo "<h1>BOOKING CONFIRMED</h1>";
 		echo "The booking details have been sent to your email address.";
 		echo "	<div class='ticket'>";
 		echo "	<div class='title'>";
-		echo 			$showtime['title'];
+		echo 			$title;
 		echo "	</div>";
 		echo "	<div class='details'>";
-		echo 			$showtime['showdate'];
+		echo 			$showdate;
 		echo "		<br/>";
-		echo 			$showtime['showtime'];
+		echo 			$showtime;
 		echo "		<br/>";
-		echo 			$showtime['name'];
+		echo 			$cinema_name;
 		echo "		<br/>";
 		echo "		Seats: ";
-		echo 			implode(", ", $_POST['seats']);
+		echo 			implode(", ", $seats;
 		echo "	</div>";
 		echo "	<div class='paid'>";
 		echo "		Amount paid: $".$total_price;
 		echo "	</div>";
 		echo "</div>";
+		
+		// include "email_booking.php"; // Sends email
 	} else {
 		echo "<h1>Booking failed</h1>";
 	}

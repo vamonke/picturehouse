@@ -93,7 +93,7 @@
 
 <div id='trailer'>
   <div id='player'></div>
-  <div class='x'>✖</div>
+  <div class='x'></div>
 </div>
 
 <script>
