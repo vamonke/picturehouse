@@ -1,7 +1,7 @@
 body {
     color: #FFFFFF;
     font-family: 'Open Sans', sans-serif;
-    background-color: #000019;
+    background-color: #000;
 }
 
 a {
@@ -17,7 +17,7 @@ h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 30pt;
-    line-height: 0.8em;
+    line-height: 0.9em;
     margin-bottom: 10px;
 }
 
@@ -34,6 +34,11 @@ h3 {
     font-size: 14pt;
     margin-bottom: 10px;
 
+}
+
+.content {
+    position: relative;
+    padding: 150px 15px 50px;
 }
 
 .width-wrap {
@@ -53,6 +58,7 @@ nav {
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.2em;
+    border-bottom: 0.5px solid #B90628;
 }
 
 nav a {
@@ -61,6 +67,7 @@ nav a {
     padding: 10px 20px;
     margin: 10px 30px;
     position: relative;
+    transition: color 200ms;
     /* border-bottom: 1px solid;
     border-bottom-color: #000;
     transition: color 100ms; */
@@ -68,6 +75,7 @@ nav a {
 
 nav a:hover {
     color: #f6b93b;
+    transition: color 200ms;
 }
 
 nav a::after {
@@ -85,21 +93,96 @@ nav a:last-child::after {
     content: none;
 }
 
-.gradient, .overlay {
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal .box {
+    border-radius: 3px;
+    width: 300px;
+    top: 18%;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    text-align: center;
+    position: absolute;
+    background: #111;
+    margin: 0 auto;
+}
+
+.modal .box .x {
+    position: absolute;
+    cursor: pointer;
+    right: 10px;
+    top: 10px;
+}
+
+#show-login, #show-signup {
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #666;
+}
+
+#show-login.current, #show-signup.current {
+    color: white;
+    font-weight: bold;
+}
+
+.modal .box form {
+    padding: 10px 0 10px;
+}
+
+.modal input, .modal label {
+    display: block;
+    width: 100%;
+    font-size: 10.5pt;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 12px;
+    border: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.modal input[type="text"], .modal input[type="password"] {
+    margin-bottom: 15px;
+}
+
+.modal label {
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.modal input[type="submit"] {
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #B90628;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #B90628 0%, #EF0230 100%);
+    margin-top: 30px;
+}
+
+.modal .box .signup {
+    display: none;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.3);
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-}
-
-.gradient {
-    background: rgba(0, 0, 0, 0.6);
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 0) 100%);
-}
-
-.overlay {
-    background: rgba(0, 0, 0, 0.3);
 }
 
 footer {

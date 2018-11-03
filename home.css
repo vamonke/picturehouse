@@ -5,10 +5,6 @@ h2 {
 
 #banner {
     position: relative;
-    /* background-image: url("banner1.jpg");
-    background-repeat: no-repeat;
-    background-position: center 70%;
-    background-size: cover; */
     padding: 320px 0 270px;
 }
 
@@ -79,6 +75,12 @@ h2 {
     /* border: 2px solid #B90628; */
     background-color: #B90628;
     background: linear-gradient(90deg, #B90628 0%, #EF0230 100%);
+    transition: color 200ms;
+}
+
+#dropdowns button:disabled {
+    transition: color 200ms;
+    color: rgb(153, 5, 32);
 }
 
 .slideshow {
@@ -91,8 +93,11 @@ h2 {
 }
 
 .slideshow div {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

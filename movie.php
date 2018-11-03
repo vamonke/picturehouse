@@ -11,16 +11,16 @@
 </head>
 
 <body>
-  <div id="navbar"></div>
-
-  <?php include 'movie_details.php'; ?>
-  <?php include 'movie_showtimes.php'; ?>
+  <?php include 'nav.php'; ?>
+  <div class='content'>
+    <?php include 'movie_details.php'; ?>
+    <?php include 'movie_showtimes.php'; ?>
+  </div>
 
   <div id="footer"></div>
 
   <script>
     $(document).ready(function () {
-        $('#navbar').load('nav.html');        
         $('#footer').load('footer.html');
     });
   </script>
