@@ -1,4 +1,4 @@
-<?php session_start(); include "register.php"; ?>
+<?php session_start(); include "login.php"; ?>
 
 <nav>
     <a href="index.php">Home</a>
@@ -18,7 +18,7 @@
 <div class="modal">
     <div class="box">
         <div class="x"></div>
-        <span id="show-login" class="current">Log In</span> | <span id="show-signup">Sign up</span>
+        <span id="show-login" class="current">Log In</span> | <span id="show-signup">Sign Up</span>
         <form class="login" method="post" action="index.php">
             <label>Email</label>
             <input type="text" name="email" required>

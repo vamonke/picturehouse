@@ -99,6 +99,11 @@ h2 {
     right: 0;
     left: 0;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top;
     background-size: cover;
+}
+
+
+.slideshow div:first-of-type {
+    background-position: center center;
 }

@@ -1,5 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <?php 
   if (!isset($_GET['id'])) {
     echo "Showtime not found";
@@ -9,17 +7,7 @@
   $showtime_id = $_GET['id'];
   // echo $showtime_id;
 
-  $servername = "localhost";
-  $username = "f31im";
-  $password = "f31im";
-  $dbname = "f31im";
-
-  // Create connection
-  $conn = mysqli_connect($servername, $username, $password, $dbname);
-  // Check connection
-  if (!$conn) {
-    die("Connection failed: ".mysqli_connect_error());
-  }
+  include "db_connect.php";
   
   $sql =
     "SELECT
@@ -48,10 +36,8 @@
   $current_cinema_id = $row['cinema_id'];
   $current_date = $row['date'];
   $current_showtime = $row['time'];
-  // echo $current_showtime;
 
   echo "<script> let movie_id = {$movie_id}; </script>";
-  // echo "<div id='poster' style='background-image: url(posters/".$poster.")'></div>";
   echo "<div class='poster-bg'>";
   echo "  <div class='width-wrap'>";
   echo "    <h1 class='title'>{$title}</h1>";
@@ -127,9 +113,7 @@
   echo "</div>";
   
   mysqli_close($conn);
-
 ?>
-
 
 <script>
   $(document).ready(function() {

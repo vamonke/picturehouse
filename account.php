@@ -2,11 +2,11 @@
 <html>
 
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Poppins:400,700" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="reset.css">
   <link rel="stylesheet" type="text/css" href="common.css">
   <link rel="stylesheet" type="text/css" href="account.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Poppins:400,700" rel="stylesheet">
   <title>PICTURE HOUSE</title>
 </head>
 
@@ -64,7 +64,8 @@
             INNER JOIN
               users ON bookings.email = users.email
           WHERE users.email = '$email'
-          GROUP BY bookings.id";
+          GROUP BY bookings.id
+          ORDER BY showtimes.showtime DESC";
 
         $result = mysqli_query($conn, $sql);
 
@@ -110,20 +111,7 @@
     </div>
   </div>
 
-  <div id="footer"></div>
-
-  <script>
-    $(document).ready(function () {
-      $('#footer').load('footer.html');
-      $('#logout').click(function() {
-        $.ajax({
-          url: 'logout.php',
-          type: 'GET',
-          success: function() { window.location.href = "index.php"; }
-        });
-      });
-    });
-  </script>
+  <?php include 'footer.php'; ?>
 </body>
 
 </html>

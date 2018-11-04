@@ -1,16 +1,5 @@
 <?php
-
-  $servername = "localhost";
-  $username = "f31im";
-  $password = "f31im";
-  $dbname = "f31im";
-
-  // Create connection
-  $conn = mysqli_connect($servername, $username, $password, $dbname);
-  // Check connection
-  if (!$conn) {
-    die("Connection failed: ".mysqli_connect_error());
-  }
+  include "db_connect.php";
   
   echo "<div id='dropdowns'>";
   echo "  <select id='movie-select' required>";

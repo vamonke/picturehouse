@@ -16,7 +16,10 @@
       DISTINCT(DATE(showtime)) AS showdate,
       DATE_FORMAT(showtime, '%a %e %b') AS showday
     FROM showtimes
-    WHERE movie_id={$movie_id} AND cinema_id={$cinema_id}
+    WHERE
+      movie_id={$movie_id} AND
+      cinema_id={$cinema_id} AND
+      DATE(showtime) >= CURDATE()
     ORDER BY showdate ASC";
   $result = mysqli_query($conn, $sql);
 

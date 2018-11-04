@@ -13,6 +13,7 @@
 
 <body>
     <?php include "nav.php"; ?>
+
     <div id="banner">
         <div class="slideshow">
             <div style="background-image: url(people.jpg)"></div>
@@ -27,21 +28,8 @@
             <?php include "index_dropdown.php" ?>
         </div>
     </div>
-    <div id="footer"></div>
-
-    <script>
-        $(document).ready(function() {
-            $('#footer').load('footer.html');
-            // $('.slideshow').slick({
-            //     arrows: false,
-            //     autoplay: true,
-            //     fade: true,
-            //     cssEase: 'ease-in-out',
-            //     speed: 2000,
-            //     autoplaySpeed: 4000,
-            // });
-        });
-    </script>
+    
+    <?php include 'footer.php'; ?>
 </body>
 
 </html>

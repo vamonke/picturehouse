@@ -2,12 +2,12 @@
 <html>
 
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Poppins:400,700" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="reset.css">
   <link rel="stylesheet" type="text/css" href="common.css">
   <link rel="stylesheet" type="text/css" href="booking.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Poppins:400,700" rel="stylesheet">
-  <title>PICTURE HOUSE</title>
+  <title>Booking</title>
 </head>
 
 <body>
@@ -62,12 +62,12 @@
               if (!isset($_SESSION['user_email'])) {
                 echo '  <label>Email</label>';
                 echo '  <input type="text" name="email" required> <br/>';
-                echo '  <label>Name</label>';
-                echo '  <input type="text" name="name" required> <br/>';
-                echo '  <label>Password</label>';
-                echo '  <input type="password" name="password" required> <br/>';
-                echo '  <label>Enter password again</label>';
-                echo '  <input type="password" name="password2" required> <br/>';
+                // echo '  <label>Name</label>';
+                // echo '  <input type="text" name="name" required> <br/>';
+                // echo '  <label>Password</label>';
+                // echo '  <input type="password" name="password" required> <br/>';
+                // echo '  <label>Enter password again</label>';
+                // echo '  <input type="password" name="password2" required> <br/>';
               }
             ?>
             <input type="submit" value="Book now">
@@ -77,12 +77,10 @@
     </form>
   </div>
 
-  <div id="footer"></div>
+  <?php include 'footer.php'; ?>
 
   <script>
     $(document).ready(function () {
-      $('#footer').load('footer.html');
-
       let type = isWeekend ? 'Weekend' : 'Weekday'; // isWeekend = true/false
       let price = isWeekend ? 13 : 9.5;
       

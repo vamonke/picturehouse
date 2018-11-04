@@ -1,15 +1,5 @@
 <?php
-  $servername = "localhost";
-  $username = "f31im";
-  $password = "f31im";
-  $dbname = "f31im";
-
-  // Create connection
-  $conn = mysqli_connect($servername, $username, $password, $dbname);
-  // Check connection
-  if (!$conn) {
-    die("Connection failed: ".mysqli_connect_error());
-  }
+  include "db_connect.php";
 
   if (!isset($_GET['id'])) {
     echo "Movie not found";
@@ -35,6 +25,8 @@
     $poster = $row['poster'];
     $trailer = $row['trailer'];
     
+    echo "<script> document.title = '$title'; </script>"; // Set title of page
+
     echo "<div id='poster-bg' style='background-image: url(posters/".$poster.")'></div>";
     echo "<div class='movie-section'>";
     echo "  <div class='width-wrap'>";
@@ -44,36 +36,42 @@
     echo "    </div>";
     echo "    <div class='details floatRight'>";
     echo "      <h1>".$title."</h1>";
-    echo "      <div class='inline-4'>";
-    echo "        <div class='label'>language</div>";
-    echo          $language;
-    echo "      </div>";
-    echo "      <div class='inline-4'>";
-    echo "        <div class='label'>rating</div>";
-    echo          $rating;
-    echo "      </div>";
-    echo "      <div class='inline-4'>";
-    echo "        <div class='label'>length</div>";
+    echo "      <table>";
+    echo "        <tr>";
+    echo "          <td>";
+    echo "            <div class='label'>language</div>";
+    echo              $language;
+    echo "          </td>";
+    echo "          <td>";
+    echo "            <div class='label'>rating</div>";
+    echo              $rating;
+    echo "          </td>";
+    echo "          <td>";
+    echo "            <div class='label'>length</div>";
     if ($runtime)
-      echo          $runtime."mins";
+      echo            $runtime."mins";
     else 
-      echo "-";
-    echo "      </div>";
-    echo "      <div class='inline-4'>";
-    echo "        <div class='label'>release</div>";
-    echo          $releaseDate;
-    echo "      </div>";
-    echo "      <div class='inline-2'>";
-    echo "        <div class='label'>director</div>";
-    echo          $director;
-    echo "      </div>";
-    echo "      <div class='inline-2'>";
-    echo "        <div class='label'>IMDb score</div>";
+      echo "          -";
+    echo "          </td>";
+    echo "        </tr>";
+    echo "        <tr>";
+    echo "          <td>";
+    echo "            <div class='label'>director</div>";
+    echo              $director;
+    echo "          </td>";
+    echo "          <td>";
+    echo "            <div class='label'>release</div>";
+    echo              $releaseDate;
+    echo "          </td>";
+    echo "          <td>";
+    echo "            <div class='label'>IMDb score</div>";
     if ($stars)
-      echo "        <img src='stars/{$stars}.png' />";
+      echo "          <img src='stars/{$stars}.png' />";
     else 
-      echo "-";
-    echo "      </div>";
+      echo "          -";
+    echo "          </td>";
+    echo "        </tr>";
+    echo "      </table>";
     echo "      <div class='label'>cast</div>";
     echo        $cast;
     echo "      <div class='label'>synopsis</div>";

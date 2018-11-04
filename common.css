@@ -68,9 +68,6 @@ nav a {
     margin: 10px 30px;
     position: relative;
     transition: color 200ms;
-    /* border-bottom: 1px solid;
-    border-bottom-color: #000;
-    transition: color 100ms; */
 }
 
 nav a:hover {
