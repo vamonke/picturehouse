@@ -70,7 +70,7 @@
                 // echo '  <input type="password" name="password2" required> <br/>';
               }
             ?>
-            <input type="submit" value="Book now">
+            <input id='booker' type="submit" value="Book now">
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@
 
         $('input[name="qty"]').val(qty);
         $('input[name="total_price"]').val(total.toFixed(2));
-        $(':input[type="submit"]').prop('disabled', (qty < 1));
+        $('#booker').prop('disabled', (qty < 1));
       };
       countChecked();
       $("input[type=checkbox]").on("click", countChecked);

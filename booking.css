@@ -220,11 +220,11 @@ input[type='submit']:disabled {
   transition: background-color 100ms;
 }
 
-.signup {
+.payment .signup {
   text-align: right;
 }
 
-.signup input, .signup label {
+.payment .signup input, .payment .signup label {
   font-size: 10.5pt;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -234,12 +234,12 @@ input[type='submit']:disabled {
   box-sizing: border-box;
 }
 
-.signup input[type="text"], .signup input[type="password"] {
+.payment .signup input[type="text"], .payment .signup input[type="password"] {
   margin-bottom: 15px;
   width: 250px;
 }
 
-.signup label {
+.payment .signup label {
   text-align: left;
   text-transform: uppercase;
 }

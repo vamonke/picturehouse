@@ -20,11 +20,28 @@
           header("Location: index.php");
           exit;
         }
+
         include "db_connect.php";
+
         $alpha = array(NULL, 'A','B','C','D','E');
         $email = $_SESSION['user_email'];
         consoleLog($email);
-        
+
+        if (isset($_POST['user_name'])) {
+          // var_dump($_POST);
+          $new_name = $_POST['user_name'];
+          $sql = 'UPDATE users SET name = "'.$new_name.'" WHERE email = "'.$email.'"';  
+          // echo $sql;
+
+          consoleLog($sql); // to check $sql
+          
+          if (mysqli_query($conn, $sql)) {
+            alert('Name updated');
+          } else {
+            alert('Error occurred: ".mysqli_error($conn)."');
+          }
+        }
+
         $sql = 'SELECT name FROM users WHERE email = "'.$email.'"';
         // consoleLog($sql);
         
@@ -33,7 +50,15 @@
 
         $row = mysqli_fetch_assoc($result);
         $name = $row['name'];
-        echo "<h1>{$name}</h1>";
+        echo "<div class='inline'>
+                <h1 class='namer'>{$name}</h1>
+                <form class='namer' action='account.php' method='post'>
+                  <input type='text' value='{$name}' name='user_name' required>
+                  <input type='submit' value='Update'>
+                </form>
+              </div>
+              <span id='namer-toggle'>Edit</span>";
+        echo "<br/>";
         echo $email;
 
         echo "<button id='logout'>Log out</button>";
@@ -113,5 +138,22 @@
 
   <?php include 'footer.php'; ?>
 </body>
+
+<script>
+    $(document).ready(function () {
+      $('#namer-toggle').click(function() {
+        let current = $(this).text();
+        $(this).text( current == 'Edit' ? 'Cancel' : 'Edit' );
+        $('.namer').toggle();
+      });
+      $('#logout').click(function() {
+        $.ajax({
+          url: 'logout.php',
+          type: 'GET',
+          success: function() { window.location.href = "index.php"; }
+        });
+      });
+    });
+</script>
 
 </html>
