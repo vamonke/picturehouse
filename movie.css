@@ -4,7 +4,7 @@
 }
 
 #poster-bg {
-    opacity: 0.5;
+    opacity: 0.6;
     position: absolute;
     background-size: cover;
     background-position: center;
@@ -65,6 +65,7 @@ table {
 }
 
 .label {
+    color: #f6b93b;
     margin: 35px 0 5px;
     text-transform: uppercase;
     font-weight: bold;

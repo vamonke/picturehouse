@@ -5,7 +5,9 @@ h2 {
 
 #banner {
     position: relative;
-    padding: 320px 0 270px;
+    padding: 25% 0 100px;
+    min-height: 90vh;
+    box-sizing: border-box;
 }
 
 #dropdowns {
